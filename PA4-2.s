@@ -1,5 +1,6 @@
-	@ Factorial
-	@ Put the required header information here
+@ Ben Terry
+@ Programming Assignment 4 - Compute Factorial
+@ 23 October 2018
 
 	.extern printf
 	.extern scanf
@@ -17,7 +18,16 @@ main:	PUSH	{LR}
 	@ Your code goes here.  Put n! in R2
 	@-------------
 
-
+	MOV r1, #1	@ r1 = 1
+	MOV r3, #1	@ r3 = 1
+	CMP r0, #0	@ r0 = 0
+	MOV r2, #1	@ r2 = 1
+_loop:
+	CMP r1, r0		@ Compares if r2=r3
+	MULLE r2, r2, r1	@ Multiply r2 * r1 if less than, store r2
+	ADDLE r1, r1, #1	@ Adds r1 + 1 and store in r1
+	BLE _loop		@ Branch if less than
+_end:
 
 
 	@-------------
